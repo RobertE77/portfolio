@@ -1,0 +1,159 @@
+/****************************************************
+
+RESPONSIVE .CSS
+
+****************************************************/
+
+
+
+
+/* --these are "media queries" they will set the break points (the point at which new styling is applied to the page due to a change in the media screens dimensions, i.e. a phone is turned sideways, the website is being viewed on a tablet or a desktop etc.)
+
+--arrange the media queries with the smaller screen settings coming before larger screens so the css rules that aren't being changed will cascade properly
+
+--syntax explanation: @media screen and (min-width: n) {}
+
+@media is the query
+
+screen means the page is being displayed on a screen
+
+and both properties need to be met (it's on a screen and the screen's width exceeds the min-width limit)
+
+(min-width: n) the width of the screen must meet or exceed this number */
+
+
+
+/* the following setting - (min-width: 480px) will set the properties for a phone*/
+
+@media screen and (min-width: 480px) {
+  
+    /********************************************
+    
+    PAGE: CONTACT
+    
+    TWO COLUMN LAYOUT
+    
+   *********************************************/
+
+  
+  /* the following is to create two columns on the webpage secondary is float: right just in case there are problems with the browser. It could be set to float: left; and it would still float properly as long as the id's are used in the proper order within the html document*/
+  
+  
+    #primary {
+      width: 50%;
+      float: left;
+    }
+
+    #secondary {
+      width: 40%;
+      float: right;
+  }
+
+
+    /********************************************
+    
+    PAGE: PORTFOLIO
+    
+   *********************************************/
+  
+  /* This will create 3 columns on the portfolio page when the break point is exceeded. note that this is changing only the width of the image and not setting the float or width. These are not changing and are therefore still going to be called from the main css */
+  
+  #gallery li {
+    width: 28.3333%;
+  }
+  
+  
+  /* the nth-child(n) is a "pseudo-class" selector. In this case it's selecting every fourth li in the #gallery element. note there is no space between nth-child and (n) 
+  
+ the clear: left declaration removes the float: left declaration that is applied in the main.css file. 
+  
+  Without this pseudo class selector the text elements from photos 1-3 in the row above, which are block elements, might "stick- down" into the row that images 4-6 will inhabit, causing the 4th image to hang  on the right side of the text block instead of flowing all the way left. Clearing every 4th child in the class makes room for all the images in that row, as well as all subsequent rows, since this command is applying the change to every 4th child (nth-child) */
+  
+  #gallery li:nth-child(4n) {
+    clear: left;
+  }
+  
+  
+  /********************************************
+    
+    PAGE: ABOUT
+    
+   *********************************************/
+  
+  
+ /* the following will float the image to the right after break point is exceeded and the margin changes will give some space between the text and the image on the right (5%) and will give space underneath if the text flows around to the bottom of the image (80px) */
+  
+  .profile-photo {
+    float: left;
+    margin: 0 5% 80px 0;
+  }
+  
+}
+
+
+
+/* the following setting - (min-width: 660px) will set the properties for a tablet  or a normal sized desktop*/
+
+@media screen and (min-width: 660px) {
+  
+  /********************************************
+    
+   HEADER
+    
+   *********************************************/  
+  
+  /* the following allows the nav elements (portfolio, about, contact) in the header to float to the right when the breakpoint is exceeded.
+  
+  -- removing the background will let the nav elements use the header (lighter green) background color.
+  
+  -- float: right; moves the nav's to the right side of the header.
+  
+  --font-size: 1.125em; makes the text display slightly larger for a larger screen size.
+  
+  --margin-right: 5%; gives room between the right side of the links and the screen edge
+  
+  --text-align: right; will make the text line up against the right margin.
+  
+  -- width is increased to 45% to
+  */
+  
+  nav {
+    background: none;
+    float: right;
+    font-size: 1.125em;
+    margin-right: 5%;
+    text-align: right;
+    width: 45%
+    
+  }
+  
+  /* the following does the same as above except it's pushing the name and job title to the left instead of the right. 
+  
+  --note the margin of 5% and the width of 45% both here and in the selection above, which fills the full width of the display while making room for the float: x; declarations to sit side by side and center the two blocks in the display */
+  
+  #logo {
+    float: left;
+    margin-left: 5%;
+    text-align: left;
+    width: 45%;
+  }
+  
+  /* the following changes to </h1> and </h2> make the text display larger for a larger screensize */
+  
+  h1 {
+    font-size: 2.5em;
+  }
+  
+  h2 {
+    font-size: 0.825em;
+    margin-bottom: 20px;
+  }
+  
+  /* this replaces the thick green box that the <nav> elements used to be in with a thinner dark green border and increases the whitespace (margin-bottom) between the header and the container below */
+  
+  header {
+    border-bottom: 5px solid #599868;
+    margin-bottom: 60px;
+  }
+  
+}

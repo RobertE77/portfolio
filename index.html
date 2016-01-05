@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>Robert Ellefson | Web Design</title>
+    
+    <!-- the following adds the normalize file to the site by linking to the file "normalize.css that's in the css folder. It needs to be placed in each html file, before other stylesheets-->
+    
+    <link rel="stylesheet" href="css/normalize.css">
+    
+    <!--the following creates the link to the google fonts that I've selected for the page. It needs to be placed after the normalize link and before the link to my own stylesheet to make sure the fonts are parsed and available for use by my css file.
+
+note: the w3 validator will send an error for the vertical pipe character that google fonts puts between the font names in the url generated for pasting into the html files. In the link below it would be in between changa+one and open+sans) replace the pipe character with %7C to avoid this error-->
+    
+    <link href='https://fonts.googleapis.com/css?family=Abril+Fatface%7CMerriweather:400,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    
+    <!-- the following creates the link to my stylesheet-->
+    
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- the following creates the link to the responsive stylesheet, which will change the display properties for the html documents based on the type and dimensions of the device displaying the webpages -->
+    
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- the following tells the browser to set the content to the width of the display screen. without this the browser will default to a desktop display setting.
+
+- -The initial scale of 1.0 tells the browser to use the full device screen size as it's parameter.
+
+- -it needs to go an each html page of the site after the responsive.css file <link> -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <header>
+      
+      <!-- the following <a> creates a link in the header of all the site pages which contain it that redirect back to the index page-->
+      
+     <a href="index.html" id="logo">
+      <h1>Robert Ellefson</h1>
+      <h2>Web Design</h2>
+     </a>
+     <nav>
+      <ul>
+        
+        <!-- the following class selector class="selected" in the <a> tag is used in the stylesheet to set parameters for how the link in the header for the current page is displayed differently from the links to the other pages. When creating new pages the class should be moved into the <a> tag for the <li> that corresponds to the new page-->
+        
+        <li><a href="index.html" class="selected">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+     </nav>
+    </header>
+    <div id="wrapper">
+      <section>
+        <ul id="gallery">
+          <li>
+            
+            <!-- the following <a> tag allows the picture to be clicked and viewed in full size-->
+            
+            <a href="img/numbers-01.jpg">
+              <img src="img/numbers-01.jpg" alt=""/>
+            <p>Image description here</p>
+            </a>
+          </li>
+          <li>
+            <a href="img/numbers-02.jpg">
+              <img src="img/numbers-02.jpg" alt=""/>
+              <p>Image description hereImage description hereImage description here</p>
+            </a>
+          </li>
+          <li>
+            <a href="img/numbers-06.jpg">
+              <img src="img/numbers-06.jpg" alt=""/>
+              <p>Image description here</p>
+            </a>
+          </li>
+          <li>
+            <a href="img/numbers-09.jpg">
+              <img src="img/numbers-09.jpg" alt=""/>
+              <p>Image description here</p>
+            </a>
+          </li>
+          <li>
+            <a href="img/numbers-12.jpg">
+              <img src="img/numbers-12.jpg" alt=""/>
+              <p>Image description here</p>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <footer>
+          <img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon">
+        <a href="http://www.facebook.com/robert.ellefson.3">
+          <img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon">
+        </a>
+        
+        <!-- the following text &copy; is an "entity" all entities begin with the & symbol. This one is used to display the copyright symbol-->
+        
+        <p>&copy; 2016 Robert Ellefson.</p>
+      </footer>
+    </div>
+  </body>
+</html>

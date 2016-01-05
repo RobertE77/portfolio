@@ -1,0 +1,313 @@
+/********************************************
+
+GENERAL
+
+*********************************************/
+
+
+body {
+  font-family: 'Merriweather', serif;
+}
+
+#wrapper {
+  
+  /* the declaration margin: 0 auto; will automatically center the element on the page with no margin on top or bottom., The % value format works better for "mobile first" design than center or some pixel assignment as it will allow the content to be centered on any size display*/
+  
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+a {
+  
+  /* the declaration text-decoration: none; will get rid of underlines on <a> elements*/
+  
+  text-decoration: none;
+}
+
+img {
+  
+  /* making an img declaration of max-width: 100%; allows the browser to scale the picture to fit the browser window when resized as well as making the photo fit on mobile devices*/
+  
+  max-width: 100%;
+  }
+
+h3 {
+  /* making a margin declaration of margin: 1em; makes sure that there is always some space between the headline element and whatever block is below it*/
+  
+  margin: 0 0 1em 0;
+}
+
+
+
+/********************************************
+
+HEADING
+
+*********************************************/
+
+header {
+  
+  /* the float: left; declaration helps formatting when the page is viewed on a desktop. It makes allows text elements to wrap around the floated elements. setting the declaration value to width: 100%; makes sure that the header will always take up the entire top of the screen. Otherwise it will bunch up around whatever text it contains and, due to the float: left; declaration, whatever elements follow will flow to the right of the header */
+  
+  float: left;
+  margin: 0 0 30px 0;
+  padding: 5px 0 0 0;
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+#logo {
+  text-align: center;
+  margin: 0;
+}
+
+h1 {
+  font-family:'Abril Fatface', cursive;
+  margin: 15px 0;
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 0.8em;
+}
+
+h2 {
+  font-size: 0.75em;
+  margin: -5px 0 0;
+  font-weight: normal;
+}
+
+
+
+/********************************************
+
+NAVIGATION
+
+*********************************************/
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 20px 0 0;
+}
+
+nav ul {
+  
+  /* the list-style: none; declaration gets rid of list formatting such as bullets */
+  
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+nav li {
+  
+  /* the display: inline-block; command turns the link elements from a pure block element to a hybrid inline block element, which allows list items to be displayed side by side */
+  
+  display: inline-block;
+}
+
+nav a {
+  
+  /* the font-weight: 800; declaration being used here is calling from fonts loaded into the browser by the google fonts link in the <head> of the html file. It is an alternative way of setting font-weights. See google.com/fonts */
+  
+  font-weight: 800;
+  padding: 15px 10px;
+}
+
+
+
+/********************************************
+
+FOOTER
+
+*********************************************/
+
+footer {
+  
+  /* the clear: both; declaration clears the element of float :right/left formatting effecting previous elements and allows the indicated elements (in this case the social media icons and the copyright text) to return to being displayed as blocks after the images in the <section> above */
+  
+  font-size: 0.75em;
+  text-align: center;
+  clear: both;
+  padding-top: 50px;
+  color: #ccc;
+}
+
+.social-icon {
+  
+  /* changing the width of the sociail media icons from their native size of 40px x 40px halves the size on normal displays but will retain the pixel depth so the icons will display cleanly on high def displays*/
+  
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+
+
+/********************************************
+
+PAGE: PORTFOLIO
+
+*********************************************/
+
+#gallery {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+ /* NOTES FOR THE FOLLOWING SELECTOR:
+
+float: left; declaration allows the images to stop stacking one on top of the other and instead flow left to right as space allows, much as text does.
+  
+  setting the width property value to 45% makes each image take up 45% of the container space, in this case allowing two images to sit side by side. The margin property value being set to 2.5% makes a margin around each picture that creates "whitespace" so the images aren't butted up against each other.
+  
+  (45% * 2) + (2.5% * 4) = 100%
+  
+  (2.5% * four because the 2.5% is applied around all four sides of the image, thus each side -left and right- of each image is getting a total of 10% margin.
+  
+  If I wanted to make the images display in 4 columns I would change the width vaule to 20% (20% * 4 = 80%) and could leave the margin at 2.5%. Because the margin is applied to all the images, and I now have 4 images in a row instead of 2, the total percentage of the container width that is taken up by margin is now the remaining 20% (2.5% * 8 = 20%) so:
+  
+  (20% * 4) + (2.5% * 8) = 100%
+  
+  If the math is done wrong and there is a remainder of container space, the images will no longer center in the page but will instead go to the left of the container due to the float: left; declaration */
+#gallery li {
+  
+  float: left;
+  width: 45%;
+  margin: 2.5%;
+  background-color: #f5f5f5;
+  color: #bdc3c7;
+}
+
+#gallery li a p {
+  margin: 0;
+  padding: 5%;
+  font-size: 0.75em;
+  color: #bdc3c7;
+}
+
+
+
+/********************************************
+
+PAGE: ABOUT
+
+*********************************************/
+
+.profile-photo {
+  
+  /* the border-radius property rounds off the corners of an image. setting its value to 100% makes the image round*/
+  
+  display: block;
+  max-width: 150px;
+  margin: 0 auto 30px;
+  border-radius: 100%;
+  
+}
+
+
+
+/********************************************
+
+PAGE: CONTACT
+
+*********************************************/
+
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* the following formats the icon image anchor elements with the .contact-info class.
+
+display-block: property makes the images take up space, so they wont be overrun by the text elements (i think?)
+
+the min-height: property makes sure that the images that are being used to make the icons aren't shrunk down by the browser below their actual pixel size
+
+the background-repeat: property stops the image from repeating across the whole page (like those textured patterns in the background of some websites) background images always repeat by default. if the property value is set to repeat-x then a banner is made. if the value is repeat-y then a vertical ribbon is made
+
+the padding effects the text of the links and pushes them over to the side so their not on top of the icon images. since the images are essentially being used to "decorate" the background, it's possible for them to be covered by other elements*/
+
+.contact-info a {
+  display: block;
+  min-height: 20px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  padding: 0 0 0 30px;
+  margin:0 0 10px;
+}
+
+/* the following is to add icon images to the various links on the contact page.
+
+in the directory listing ../img/phone.png the .. brings us up one file level and out of the css file folder and up to the same level as the img folder. from there we direct to the img folder and then to the phone.png file within that folder */
+
+.contact-info li.phone a {
+  background-image: url('../img/phone.png');
+  
+}
+
+.contact-info li.mail a {
+  background-image: url('../img/mail.png');
+  
+}
+
+.contact-info li.twitter a {
+  background-image: url('../img/twitter.png');
+  
+}
+
+
+
+
+/********************************************
+
+COLORS
+
+*********************************************/
+
+  /* site body */
+body {
+  background-color: white;
+  color: #999;
+}
+
+/* green header */
+header {
+  background: #6ab47b;
+  border-color: #599a68;
+}
+
+/* nav background on mobile devices */
+nav {
+  background: #599a68;
+}
+
+/* Logo text */
+h1, h2 {
+  color: #fff;
+}
+
+/* links */
+a {
+  color: #6ab47b;
+}
+
+/* nav link */
+nav a, nav a:visited {
+  
+  /* a:visited is a "pseudo-element" and will modify any links </a> that have been clicked*/
+  
+  color: #fff;
+}
+
+/* selected nav link */
+nav a.selected, nav a:hover {
+  
+  /* a:hover is a "pseudo-element" and will modify any links </a> that the mouse pointer is "hovering" over */
+  
+  color: #32673f;
+}
